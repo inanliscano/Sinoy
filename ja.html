@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gawa ko to</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav .menu {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        nav .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        header {
+            margin-top: 60px;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #7b2bff;
+            color: #fff;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Tutorials Section */
+        .tutorials {
+            padding: 20px;
+        }
+
+        .tutorial-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tutorial-container h2 {
+            color: #007acc;
+            margin-bottom: 10px;
+        }
+
+        .tutorial-container textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .tutorial-container iframe {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .tutorial-container button {
+            padding: 10px 20px;
+            background-color: #007acc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tutorial-container button:hover {
+            background-color: #005f99;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 200px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            nav .menu.open {
+                display: flex;
+            }
+            nav .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HTML Academy</div>
+        <div class="menu">
+            <a href="#HOME.html">Home</a>
+            <a href="jay.html">Contact</a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Welcome to HTML Academy</h1>
+        <p>Explore the basics of HTML through practical examples and hands-on coding.</p>
+    </header>
+
+    <!-- Tutorials Section -->
+    <div class="tutorials">
+        <!-- Tutorial: HTML Comments -->
+        <div class="tutorial-container">
+            <h2>HTML Comments</h2>
+            <textarea id="html-comments" placeholder="Type your HTML code here...">&lt;!-- This is a comment --&gt;
+&lt;p&gt;Comments are not visible in the browser.&lt;/p&gt;</textarea>
+            <button onclick="runCode('html-comments', 'output-comments')">Run Code</button>
+            <iframe id="output-comments"></iframe>
+        </div>
+
+        <!-- Tutorial: HTML Headers -->
+        <div class="tutorial-container">
+            <h2>HTML Headers</h2>
+            <textarea id="html-headers" placeholder="Type your HTML code here...">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;</textarea>
+            <button onclick="runCode('html-headers', 'output-headers')">Run Code</button>
+            <iframe id="output-headers"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HTML Academy | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('open');
+        }
+
+        function runCode(inputId, outputId) {
+            const code = document.getElementById(inputId).value;
+            document.getElementById(outputId).srcdoc = code;
+        }
+    </script>
+</body>
+</html>

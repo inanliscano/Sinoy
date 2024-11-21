@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ko </title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav .menu {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        nav .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        header {
+            margin-top: 60px;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #7b2bff;
+            color: #fff;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 20px;
+        }
+
+        .contact-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .contact-container h2 {
+            color: #007acc;
+            margin-bottom: 10px;
+        }
+
+        .contact-container p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .contact-container strong {
+            color: #007acc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 200px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            nav .menu.open {
+                display: flex;
+            }
+            nav .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HTML Academy</div>
+        <div class="menu">
+            <a href="ja.html">Home</a>
+            <a href="#Contact">Contact</a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Contact Information</h1>
+        <p>Learn more about the creator.</p>
+    </header>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <div class="contact-container">
+            <h2>The Creator</h2>
+            <p><strong>Name:</strong> Arjhay L. Sinoy</p>
+            <p><strong>Birthdate:</strong> October 31, 2007</p>
+            <p><strong>Email:</strong> Arjhayyonis@gmail.com</p>
+
+            <h2>Reflection</h2>
+            <p>
+                Creating this tutorial website was a challenging experience. 
+                It allowed me to deepen my understanding of HTML and CSS while also learning about responsive design techniques.
+                I encountered challenges, especially in ensuring compatibility and managing interactive elements, but these were valuable learning opportunities.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HTML Academy | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
